@@ -26,4 +26,17 @@ export class EventComponent implements OnInit {
       }
     );
   }
+
+  deleteEvent(eventId: number): void {
+    this.eventService.deleteEvent(eventId).subscribe(
+      () => {
+        console.log('Event deleted successfully');
+
+        this.loadEvents();
+      },
+      error => {
+        console.error('Erreur lors de la suppression de l\'événement :', error);
+      }
+    );
+  }
 }
