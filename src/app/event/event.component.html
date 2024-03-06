@@ -1,0 +1,13 @@
+<!-- event.component.html -->
+
+<h2>List of Events</h2>
+
+<ul>
+  <li *ngFor="let event of events">
+    <h3>{{ event.Title }}</h3>
+    <p>{{ event.Description }}</p>
+    <p>Date: {{ event.Date | date }}</p>
+    <p>Time: {{ event.Time | date:'shortTime' }}</p>
+    <p>Location: {{ event.Location }}</p>
+  </li>
+</ul>
