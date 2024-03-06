@@ -26,6 +26,11 @@ export class EventService {
     return this.http.delete<void>(`${environment.apiUrl}${this.eventsUrl}/${eventId}`);
   }
 
+  /** Créer un événement */
+  createEvent(eventDto: EventDtoUp): Observable<Event> {
+    return this.http.post<Event>(`${environment.apiUrl}${this.eventsUrl}`, eventDto);
+  }
+
   /** Créer un DTO pour la création ou la mise à jour d'un événement */
   eventDto(title: string, description: string, date: Date, time: number, location: string): EventDtoUp {
     return {
